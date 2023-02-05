@@ -25,4 +25,13 @@ std::cout << reused << " " << unique << std::endl;
 std::cout << ::reused << " " << unique << std::endl;
 return 0;
 }
-'''
+```
+# reference
+There are two kinds of refs - the lvalue ref and the rvalue ref.
+|lvalue ref|rvalue ref|
+|---|---|
+|use &|use &&|
+|addressable|&#10008|
+|assignable|&#10008|
+
+Generally lvalue can be modified while rvalue not(in the context of basic types). User-defined rvalue ref can be modified by member function.
