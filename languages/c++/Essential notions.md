@@ -35,5 +35,9 @@ There are two kinds of refs - the lvalue ref and the rvalue ref.
 |assignable|&#10008|
 
 Generally lvalue can be modified while rvalue not(in the context of basic types). User-defined rvalue ref can be modified by member function.
-# test
-In this minute I will type into some meaningless words just to verify where or not can this auto push feature works. If I can see these new lines in the github platform then fine.
+# types & structs
+The huge diffrences: statically typed or dynamically typed.
+**statically** : everything with a name is given a type before runtime
+dynamically: everything with a name is given a type ***at*** runtime based on the thing's current value
+***Runtime*** is the period when program is executing commands after compilation( if compiled).
+
