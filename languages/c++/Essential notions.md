@@ -28,11 +28,24 @@ return 0;
 ```
 # reference
 There are two kinds of refs - the lvalue ref and the rvalue ref.
-|lvalue ref|rvalue ref|
+|lvalue|rvalue|
 |---|---|
 |use &|use &&|
 |addressable|&#10008|
 |assignable|&#10008|
+|can appear on the left or right of an =|only right|
+|have a name|do not|
+|not temporary|temporary|
+
+So there's a common misuse of the reference. If the parameter of a function is a ref, you are not allowed to pass an r-value argument **in most cases**.
+***
+	DO NOT declare not-const reference to const variables.
+***
+- If we need to alias the variable to modify it, we can  
+use references  
+- If we don’t need to modify the variable, but it’s a big  
+variable (e.g. std::vector), we can use const references  
+***
 
 Generally lvalue can be modified while rvalue not(in the context of basic types). User-defined rvalue ref can be modified by member function.
 # types & structs
@@ -52,7 +65,6 @@ for (size_t i = 0; i < nums.size(); ++i) {
 	num2++;  
 	}  
 }  
-47
 ```
 Tips: What would happen if the & in line3 is removed?
 # auto
@@ -70,4 +82,28 @@ auto p =  std::make_pair(“s”, 5);
 auto [a, b] = p;  
 // a is string, b is int  
 // auto [a, b] = std::make_pair(...);
+```
+# Stream
+***
+Stream is an abstraction for  input/output. Streams  convert between data and  the string representation  of data.  
+e.g. cout
+***Except for primitive types and most from the STL, you will have to write the << operator urself.***
+	The type of `std::cout`  is `std::ostream`
+## File stream
+```cpp
+std::ofstream out(“out.txt”);  
+// out is now an ofstream that outputs to  out.txt  
+out << 5 << std::endl; // out.txt contains 5 33
+
+std::cout is a global constant  
+object that you get from  
+#include <iostream>  
+34
+
+std::cout is a global constant  
+object that you get from  
+#include <iostream>  
+To use any other output stream,  
+you must first initialize it!  
+35
 ```
