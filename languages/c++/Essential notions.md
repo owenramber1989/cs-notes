@@ -93,17 +93,36 @@ e.g. cout
 ```cpp
 std::ofstream out(“out.txt”);  
 // out is now an ofstream that outputs to  out.txt  
-out << 5 << std::endl; // out.txt contains 5 33
-
-std::cout is a global constant  
-object that you get from  
-#include <iostream>  
-34
-
-std::cout is a global constant  
-object that you get from  
-#include <iostream>  
-To use any other output stream,  
-you must first initialize it!  
-35
+out << 5 << std::endl; // out.txt contains 5 
 ```
+## Input stream 
+### when things go wrong
+```cpp
+string str;  
+int x;  
+string otherStr;  
+std::cin >> str >> x >> otherStr;  
+//what happens if input is blah blah blah?  
+std::cout << str << x << otherStr;
+```
+First of all, there would not be a crush. X stores 0 to indicate a fail. And there would be stored ***nothing in otherStr***. Cuz once an error is detected, the input stream's fail bit is set, and it will no longer accept input.
+## std::getline()
+```cpp
+istream& getline(istream& is, string& str, char delim);
+//The function store output in str.
+```
+### How it works:  
+- Clears contents in str  
+- Extracts chars from is and stores them in str until:  
+	- End of file reached, sets EOF bit (checked using is.eof())  
+	- Next char in is is delim, extracts but does not store delim  
+	- str out of space, sets FAIL bit (checked using is.fail())  
+- If no chars extracted for any reason, FAIL bit set  
+In contrast:  
+● “>>” only reads until it hits  whitespace (so can’t read a  sentence in one go)  
+● BUT “>>” can convert data to  built-in types (like ints) while  getline can only produce strings.
+● AND “>>” only stops reading at  predefined whitespace while  getline can stop reading at any  
+delimiter you define.
+
+
+ 
