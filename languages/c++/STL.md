@@ -1,5 +1,17 @@
-# Vector
-## Initialization
+# Containers
+***
+There are two types of containers.
+
+- Sequence:  
+	● Containers that can be accessed  sequentially  
+	● Anything with an inherent order  goes here!
+- Associative  
+	● Containers that don’t necessarily have a sequential order  
+	● More easily searched  
+	● Maps and sets go here!
+
+## Vector
+### Initialization
 Notice the slight difference
 ```cpp
 std::vector<int> vec1(3,5);
