@@ -14,4 +14,18 @@ line of sight 视线
 a constellation of | a group of related ideas, things or people
 remain vigilant 保持高度警惕
 the armpit of sth 肮脏的角落，令人厌恶的地方
-has a great personal charisma 具有超凡的个人每
+has a great personal charisma 具有超凡的个人魅力
+accede to 同意请求或建议
+on the fly 赶紧地，匆忙地
+a beacon of hope for 希望之灯
+YMMV your mileage may vary 实际情况因人而异
+an opening gambit 开场白
+off the charts 高得离谱
+ad hoc 临时安排的，特别的，专门的
+be at the end of your tether/rope 筋疲力尽，山穷水尽
+rise to prominence 崭露头角
+go haywire 出故障，失控
+without preamble 开门见山地
+bona fide 真诚的，真实的，合法的
+defer to 遵从,听从
+a rule of thumb 经验法则
