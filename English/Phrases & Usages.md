@@ -29,3 +29,4 @@ without preamble 开门见山地
 bona fide 真诚的，真实的，合法的
 defer to 遵从,听从
 a rule of thumb 经验法则
+put it on the back burner 先放一方
