@@ -1,4 +1,6 @@
 ... rest on untenable assumptions about ...
+guinea pig 豚鼠，实验对象
+RRR week --Reading, Review, Recitation week
 the prosaic side of life 生活平淡的一面
 a glint of sth ...的微光，闪现
 a glint of anger 愤怒的目光
