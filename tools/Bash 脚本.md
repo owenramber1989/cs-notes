@@ -57,3 +57,20 @@ printf '%-10.10s = %4.2f\n' 'Gigahertz' 1.92735
   && { echo "Result is 1." ; exit 0 ; } \
   || { echo "Result isn't 1." ; exit 120; } 
 ```
+#T形接头
+将输出作为输入，同时保留其副本
+```shell
+find / -name '*.c' -print 2>&1 | tee /tmp/all.my.sources
+```
+这样，输出保留在了指定的文件里，同时也会打印到屏幕上
+#STDERR与STDOUT
+	标准输出是缓冲式的，标准错误则不是。对于标准输出，只有缓冲区满了或者文件被关闭，才会写入输出，标准错误则是每个字符都单独写入，因次可以立刻看到错误信息
+#标准输入
+<< 允许我们创建一个临时输入源，然后指定一个终止符，用`<<-`  就可以在每行的开头用tab缩进here-document
+```shell
+grep $1 <<-'EOF'
+	lots of data
+	EOF
+```
+注意EOF后面不能有空白字符
+#获取用户输入
