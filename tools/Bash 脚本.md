@@ -50,6 +50,7 @@ printf '%-10.10s = %4.2f\n' 'Gigahertz' 1.92735
 1. 可以用来将重定向应用于多个命令的输出
 	` { pwd; ls; cd ../somewhere; pwd; ls; } > /tmp/all.out`
 	当然用圆括号也可以，用花括号则要注意花括号两端要有空格，圆括号是在子shell中运行命令，花括号更像一种便捷写法
+		这种用法下最后一个命令必须用分号结尾
 	上例如果用圆括号，wd不会改变，但若用花括号则会改变
 2. 简化if-else分支结构
 ```shell
@@ -109,7 +110,77 @@ exit
 ```shell
 a ; b ; c # 依次执行abc三个命令
 a && b && c # 前一个命令成功了才执行下一个命令
+# cd tmp ; && rm *
 a & b & c # 同时执行三个命令，a b 转后台
 ```
 
 
+第三条命令会打印出作业号和进程ID，杀死作业可以 `kill %1` or `kill 4592`
+#执行结果
+`$?` 变量保存命令的退出状态
+	如果直接打印该变量，那么只有一次机会，最好用一个变量将退出状态保存
+	`STAT=$? ; echo $STAT `
+	注意注意***shell使用0代表真，非0代表假***
+#命令失败时退出shell
+```shell
+set -e
+cd mytmp
+rm *
+```
+如果没有成功进入mytmp的话shell就直接退出了
+#显示报错
+`cmd || printf "%b" "cmd failed \n"`
+这样cmd执行失败时就会出现后面的提示信息
+	注意该用法和a or b一样是会短路的，所以如果 || 后面有多条指令记得用花括号
+#执行所有的脚本
+```shell
+for SCRIPT in /path/*
+do
+	if [ -f "$SCRIPT" -a -x "SCRIPT" ] 
+	then 
+		$SCRIPT
+	fi
+done
+```
+-f 判断是不是文件，-x判断是否有执行权限
+***
+# 变量
+	所有变量最好都用大写，赋值符号两侧不能有空白字符
+
+#导出变量
+```shell
+export FNAME
+export SIZE
+export MAX
+...
+MAX=2048
+SIZE=64
+FNAME=/tmp/foo/bar
+```
+导出的变量是`pass by value` 的,因此传出去之后就可以随意修改了
+#查看
+`set`  查看当前shell中所有的变量值和函数定义
+`env`   查看那些被导出的，可以用于子shell的变量
+#处理包含空格的参数列表
+```sh
+for ARGS in "$@"
+do
+	chmod 0750 "$ARGS"
+done
+```
+#参数数量
+`if [ $# -lt 3 ] `
+or
+`if (( $# > 3 )) `
+#默认值
+`FILEDIR=${1:-/tmp}`
+`:-`提供了一个缺省选项
+而`:=` 会在指定参数为空时为其赋值
+`cd ${BASE:="$(pwd)"}`
+`$?`可以针对不存在的参数输出错误信息
+```sh
+FOOTYPE=${3:?"Error. $USAGE. $(rm $BAR)"}
+```
+甚至可以在后面额外下命令并打印命令的输出
+***
+读到了<<bash shell脚本编程经典实例>> p99 5.18

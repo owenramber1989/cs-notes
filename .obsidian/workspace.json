@@ -121,7 +121,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#包含空格的参数列表",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -138,7 +138,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -219,7 +220,7 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "07bcd308ea358649",
+  "active": "fd53122009e70f3b",
   "lastOpenFiles": [
     "English/Phrases & Usages.md",
     "Network/Essential notions.md",
