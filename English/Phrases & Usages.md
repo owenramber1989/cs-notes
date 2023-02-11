@@ -1,4 +1,7 @@
 ... rest on untenable assumptions about ...
+w/o without
+a far cry from 与...差别迥异
+cement concepts into memory
 guinea pig 豚鼠，实验对象
 RRR week --Reading, Review, Recitation week
 the prosaic side of life 生活平淡的一面
