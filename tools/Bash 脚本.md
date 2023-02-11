@@ -203,3 +203,15 @@ done
 |`name%%pattern`|从字符串结束位置开始，删除匹配pattern的最长子串|
 |name/pattern/string|替换掉第一次出现的pattern|
 |name//pattern/string|替换掉所有出现的pattern|
+#求绝对值
+`${MYNUM#-}`
+#循环读值创建CSV
+```sh
+while read NEWVAL
+do
+	LIST="${LIST}${LIST:+,}${NEWVAL}"
+done
+echo $LIST
+```
+如果LIST为空或者不存在，那么两个关于LIST的表达式都为空
+如果LIST不为空，那么第二个表达式会被替换成逗号
