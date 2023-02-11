@@ -74,3 +74,41 @@ grep $1 <<-'EOF'
 ```
 注意EOF后面不能有空白字符
 #获取用户输入
+1. read
+```shell
+read 
+read -p "what's your name" ANSWER
+read -t 3 -p "Tell me your name in 3 sec." ANSWER
+read PRE MID POST
+```
+-p 可以先输出提示，-t设置时间限制
+获取多个变量，输入少了后面的设为null，多了的则全部留给最后一个变量
+2. 避免屏幕回显
+	`read -s -p "password: " PASSWD ; printf "%b" "\n"`
+***
+#  执行命令
+`$PATH` 包含了一个目录列表，bash 使用该变量定位可执行文件， 目录以冒号分隔
+注意当前目录，也就是点号目录一定要放在最后面，最好不放
+***因为bash是按照目录中列出的目录顺序依次查找命令行上指定的可执行文件，点号目录放在前面就容易被同名命令的恶意版本欺骗***
+```shell
+bash
+cd
+touch ls
+chmod 755 ls
+PATH=".:$PATH"
+ls
+```
+这样的话ls就失效了，但因为第一行命令bash是一个副本，exit该shell就好了，不过删掉该ls亦可
+```shell
+cd
+rm ls
+exit
+```
+因此，***绝对不要把点号目录或可写目录放进root的$PATH变量里***
+## 多个命令
+```shell
+a ; b ; c # 依次执行abc三个命令
+a && b && c # 前一个命令成功了才执行下一个命令
+a & b & c # 同时执行三个命令，a b 转后台
+```
+
