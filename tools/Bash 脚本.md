@@ -215,3 +215,29 @@ echo $LIST
 ```
 如果LIST为空或者不存在，那么两个关于LIST的表达式都为空
 如果LIST不为空，那么第二个表达式会被替换成逗号
+#数组
+ARR=(first second third home)
+$ARR 等同于 ${ARR[0]}
+#大小写
+```sh
+${FN,,} # 全部转小写
+${FN^^} # 大
+${FN~~} # 颠倒
+```
+也可以用变量声明的方式
+```sh
+declare -u up # 大
+declare -l dn # 小
+declare -c Ca # 首字母大写
+```
+#驼峰命名法
+```sh
+while read TXT
+do
+	RA=($TXT) # 数组初始化
+	echo ${RA[@]^}
+done
+```
+`[@]` 一次性引用数组中的全部元素，^ 脱字符将每个元素的首字母转换为大写
+***
+前物质
