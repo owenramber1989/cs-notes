@@ -182,5 +182,24 @@ or
 FOOTYPE=${3:?"Error. $USAGE. $(rm $BAR)"}
 ```
 甚至可以在后面额外下命令并打印命令的输出
-***
-读到了<<bash shell脚本编程经典实例>> p99 5.18
+#修改字符串
+```sh
+#!/usr/bin/env bash
+# 将文件后缀.bad 改为 .bash
+
+for FN in *.bad
+do
+	mv "${FN}" "${FN%bad}bash"
+done 
+```
+当然上面的实例也可以用sed的斜线法
+|${...}内|操作|
+|---|---|
+|name:num1:num2|从索引num1开始，返回长度为num2的子串|
+|`#name`|返回字符串长度|
+|name#pattern|从字符串起始位置开始，删除匹配pattern的最短子串|
+|name##pattern|从字符串起始位置开始，删除匹配pattern的最长子串|
+|name%pattern|从字符串结束位置开始，删除匹配pattern的最短子串|
+|`name%%pattern`|从字符串结束位置开始，删除匹配pattern的最长子串|
+|name/pattern/string|替换掉第一次出现的pattern|
+|name//pattern/string|替换掉所有出现的pattern|

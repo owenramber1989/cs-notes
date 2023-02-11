@@ -159,7 +159,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "languages/c++/Essential notions.md",
+                "file": "tools/Bash 脚本.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -176,7 +176,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "languages/c++/Essential notions.md",
+                "file": "tools/Bash 脚本.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -199,7 +199,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "languages/c++/Essential notions.md"
+                "file": "tools/Bash 脚本.md"
               }
             }
           }
@@ -220,11 +220,11 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "fd53122009e70f3b",
+  "active": "07bcd308ea358649",
   "lastOpenFiles": [
+    "languages/c++/Essential notions.md",
     "English/Phrases & Usages.md",
     "Network/Essential notions.md",
-    "languages/c++/Essential notions.md",
     "pinciples/Is it worth taking down all the notes?.md",
     "tools/命令行环境.md",
     "languages/c++/STL.md"
