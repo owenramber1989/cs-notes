@@ -29,3 +29,11 @@ grep -i taylor mail/*
 `grep -i dec logfile | grep -vi decimal | grep -vi | decimate`
 但是搜索12月的日志文件最好用下面的正则表达式
 `grep Dec\ [0-9 ][0-9] logfile`
+***
+# 基本命令
+#查找命令
+	忘记了命令名的时候可以用 `apropos` 或 `man -k`
+#查找文件
+`ls -d .v*/` 是一个例子，-d表示筛选，文件名模式以斜线结尾可以只显示匹配模式的目录，而不会显示文件名
+#输出
+	'' 单引号可以让shell不处理字符串，双引号则还是会进行变量扩展、算术扩展、波浪号扩展和命令替换
