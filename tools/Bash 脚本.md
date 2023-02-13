@@ -257,25 +257,15 @@ fi
 检查文件特性的单目运算符
 |运算符|描述|
 |---|---|
-|-e file     文件是否存在(exist)|
--f file文件是否存在且为普通文件(file)  -d file  文件是否存在且为目录(directory)
-
--b file
-
-文件是否存在且为块设备block device
-
--c file
-
-文件是否存在且为字符设备character device
-
--S file
-
-文件是否存在且为套接字文件Socket
-
--p file
-
-文件是否存在且为命名管道文件FIFO(pipe)
-
--L file
-
-文件是否存在且是一个链接文件(Link)
+|-e file|文件是否存在(exist)|
+|-f filei|文件是否存在且为普通文件(file)  |
+|-d file  |文件是否存在且为目录(directory)|
+|-b file  |文件是否存在且为块设备block device  |
+|-c file  |文件是否存在且为字符设备character device|
+| -S file  |文件是否存在且为套接字文件Socket  |
+|-p file  |文件是否存在且为命名管道文件FIFO(pipe)  |
+|-L file|  文件是否存在且是一个链接文件(Link)|
+|-N file|文件自上次读取后被修改过|
+|-r file|可读文件(-w -x 类似)|
+|-s file|文件大小不为空|
+***
