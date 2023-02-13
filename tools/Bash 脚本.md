@@ -258,7 +258,7 @@ fi
 |运算符|描述|
 |---|---|
 |-e file|文件是否存在(exist)|
-|-f filei|文件是否存在且为普通文件(file)  |
+|-f file|文件是否存在且为普通文件(file)  |
 |-d file  |文件是否存在且为目录(directory)|
 |-b file  |文件是否存在且为块设备block device  |
 |-c file  |文件是否存在且为字符设备character device|
@@ -269,3 +269,19 @@ fi
 |-r file|可读文件(-w -x 类似)|
 |-s file|文件大小不为空|
 ***
+```sh
+while read lineoftext
+do
+	process that line
+done < file.input
+
+# 另一种从文件中读取参数进行循环的方式
+
+cat file.input |
+while read lineoftext
+do
+	process that line
+done
+```
+
+
