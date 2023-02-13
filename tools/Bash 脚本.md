@@ -240,4 +240,42 @@ done
 ```
 `[@]` 一次性引用数组中的全部元素，^ 脱字符将每个元素的首字母转换为大写
 ***
-前五章
+# 算数
+```sh
+COUNT=$((COUNT + $2 + OFFSET))
+let COUNT+=5
+```
+也可以用逗号形成级联
+`echo $(( X+=5, Y*=3))`
+```sh
+if test $# -lt 3
+then 
+	echo try again.
+fi
+```
+***
+检查文件特性的单目运算符
+|运算符|描述|
+|---|---|
+|-e file     文件是否存在(exist)|
+-f file文件是否存在且为普通文件(file)  -d file  文件是否存在且为目录(directory)
+
+-b file
+
+文件是否存在且为块设备block device
+
+-c file
+
+文件是否存在且为字符设备character device
+
+-S file
+
+文件是否存在且为套接字文件Socket
+
+-p file
+
+文件是否存在且为命名管道文件FIFO(pipe)
+
+-L file
+
+文件是否存在且是一个链接文件(Link)
