@@ -97,7 +97,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Network/FTP.md",
+                "file": "Network/Essential notions.md",
                 "mode": "source",
                 "source": false
               }
@@ -170,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Network/FTP.md",
+                "file": "Network/Essential notions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -187,7 +187,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Network/FTP.md",
+                "file": "Network/Essential notions.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -210,7 +210,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Network/FTP.md"
+                "file": "Network/Essential notions.md"
               }
             }
           }
@@ -233,6 +233,7 @@
   },
   "active": "5e93661751d03b55",
   "lastOpenFiles": [
+    "Network/FTP.md",
     "Network/Essential notions.md",
     "tools/Bash 脚本.md",
     "languages/c++/Essential notions.md",
